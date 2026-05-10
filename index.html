@@ -52,7 +52,10 @@
 
     <script type="text/babel">
         const { useState, useEffect, useMemo } = React;
-        const { motion, AnimatePresence } = window.FramerMotion || {};
+
+        // Is tareeke se error nahi aayega
+        const motion = window.FramerMotion ? window.FramerMotion.motion : ({ children, className, ...props }) => <div className={className} {...props}>{children}</div>;
+        const AnimatePresence = window.FramerMotion ? window.FramerMotion.AnimatePresence : ({ children }) => <>{children}</>;
 
         // --- Data ---
         const MENU_ITEMS = [

@@ -145,7 +145,7 @@
                         </div>
 
                         {/* Menu */}
-                        <div className="space-y-6">
+                        <div id="menu-section" className="space-y-6">
                             <div className="flex items-center justify-between border-b border-zinc-800/50 pb-4">
                                 <h3 className="text-xs font-black uppercase tracking-[0.3em] text-zinc-500 flex items-center gap-3">
                                     <span className="w-12 h-[1px] bg-zinc-800"></span> Signature Specialties
@@ -154,7 +154,11 @@
                                     {['All', 'BBQ', 'Mains', 'Rice'].map(cat => (
                                         <button 
                                             key={cat}
-                                            onClick={() => setActiveCategory(cat)}
+                                            onClick={() => {
+                                            setActiveCategory(cat);
+                                                        // Agar aap chahte hain ke category change karte hi menu top par aa jaye:
+                                        document.getElementById('menu-section')?.scrollIntoView({ behavior: 'smooth' });
+                        }}
                                             className={`px-4 py-1.5 rounded-lg text-[9px] uppercase font-black tracking-[0.2em] transition-all ${activeCategory === cat ? 'bg-amber-500 text-black' : 'bg-zinc-900 text-zinc-500 border border-zinc-800 hover:border-amber-500/50'}`}
                                         >
                                             {cat}

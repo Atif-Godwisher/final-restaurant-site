@@ -1,46 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Karachi Grill House</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karachi Grill House</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-<script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-<script>
-tailwind.config = {
-theme: {
-extend: {
-fontFamily: {
-sans: ['Inter', 'sans-serif'],
-serif: ['Playfair Display', 'serif']
-},
-colors: {
-gold: '#D4AF37',
-appbg: '#050505'
-}
-}
-}
-}
-</script>
-
-<style>
-body{
-margin:0;
-background:#050505;
-font-family:Inter,sans-serif;
-color:white;
-}
-html{
-scroll-behavior:smooth;
-}
-</style>
+  <style>
+    body{
+      margin:0;
+      font-family:Inter,sans-serif;
+      background:#050505;
+      color:white;
+    }
+  </style>
 </head>
 
 <body>
@@ -48,65 +27,64 @@ scroll-behavior:smooth;
 
 <script type="text/babel">
 
-const {motion}=window.framerMotion;
-
 function App(){
-
-return(
+return (
 <div>
 
-<nav className="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-lg p-5 flex justify-between z-50">
-<h1 className="text-2xl text-gold font-serif">Karachi Grill House</h1>
-<button className="bg-yellow-500 px-5 py-2 rounded-xl text-black font-bold">
+<nav className="fixed top-0 left-0 w-full bg-black p-5 flex justify-between z-50">
+<h1 style={{fontFamily:'Playfair Display'}} className="text-2xl text-yellow-400">
+Karachi Grill House
+</h1>
+<button className="bg-yellow-400 text-black px-5 py-2 rounded-xl font-bold">
 Order Now
 </button>
 </nav>
 
 <section className="h-screen flex flex-col justify-center items-center text-center px-6">
-<motion.h1
-initial={{opacity:0,y:30}}
-animate={{opacity:1,y:0}}
-className="text-6xl md:text-8xl font-serif text-gold">
+<h1 style={{fontFamily:'Playfair Display'}} className="text-6xl md:text-8xl text-yellow-400">
 Luxury Dining
-</motion.h1>
+</h1>
 
 <p className="mt-6 text-zinc-300 max-w-xl">
-Authentic premium grilled cuisine with world-class presentation.
+Premium grilled cuisine crafted for elite taste.
 </p>
 
-<button className="mt-10 bg-yellow-500 px-8 py-4 rounded-2xl text-black font-bold">
+<button className="mt-10 bg-yellow-400 text-black px-8 py-4 rounded-2xl font-bold">
 Explore Menu
 </button>
 </section>
 
-<section className="py-20 px-10 grid md:grid-cols-3 gap-10">
+<section className="py-20 px-8 grid md:grid-cols-3 gap-8">
 
 {[
 ["Mughlai Seekh",1850],
 ["Persian Tikka",1450],
 ["Karachi Chops",2450]
-].map((item,i)=>(
+].map((item,index)=>
 
-<div key={i} className="bg-zinc-900 rounded-3xl p-8">
-<h2 className="text-3xl font-serif text-gold">{item[0]}</h2>
+<div key={index} className="bg-zinc-900 rounded-3xl p-8">
+<h2 style={{fontFamily:'Playfair Display'}} className="text-3xl text-yellow-400">
+{item[0]}
+</h2>
+
 <p className="mt-4 text-zinc-400">
-Premium handcrafted grilled perfection.
+Authentic handcrafted grill perfection.
 </p>
-<p className="mt-6 text-2xl">
+
+<p className="mt-5 text-2xl">
 PKR {item[1]}
 </p>
 
-<button className="mt-6 w-full bg-yellow-500 py-3 rounded-xl text-black font-bold">
+<button className="mt-6 w-full bg-yellow-400 text-black py-3 rounded-xl font-bold">
 Add to Cart
 </button>
-
 </div>
 
-))}
+)}
 
 </section>
 
-<footer className="py-10 text-center text-zinc-500 border-t border-zinc-800">
+<footer className="py-10 text-center border-t border-zinc-800 text-zinc-500">
 © Karachi Grill House 2026
 </footer>
 
@@ -114,8 +92,8 @@ Add to Cart
 )
 }
 
-const root=ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App/>);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
 
 </script>
 
